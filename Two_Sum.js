@@ -40,17 +40,14 @@
 var twoSum = function(nums, target) {
   const numsMap = {};
 
-  for (let i = 0; i < nums.length; i++) {
-      // nums: [2,7,11,15]
-      // numsMap: { '2': 0, '7': 1, '11': 2, '15': 3}
-      numsMap[nums[i]] = i;
-  }
-
   console.log(numsMap);
   for (let i = 0; i < nums.length; i++) {
-      const secondNum = target - nums[i];
-      if (numsMap.hasOwnProperty(secondNum) && numsMap[secondNum] !== i) {
-          return [i, numsMap[secondNum]]
-      }
+    const secondNum = target - nums[i];
+
+    if (numsMap.hasOwnProperty(secondNum)) {
+      return [i, numsMap[secondNum]]
+    }
+
+    numsMap[nums[i]] = i;
   }
 };
