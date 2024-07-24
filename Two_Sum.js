@@ -40,7 +40,6 @@
 var twoSum = function(nums, target) {
   const numsMap = {};
 
-  console.log(numsMap);
   for (let i = 0; i < nums.length; i++) {
     const secondNum = target - nums[i];
 
