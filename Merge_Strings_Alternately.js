@@ -37,17 +37,20 @@
  */
 var mergeAlternately = function(word1, word2) {
   const mergedString = [];
+  const word1Length = word1?.length || 0;
+  const word2Length = word2?.length || 0;
 
-  if (word1.length > word2.length || word1.length === word2.length) {
-    for (i = 0; i < word1.length; i++) {
+  if (word1Length > word2Length || word1Length === word2Length) {
+    for (i = 0; i < word1Length; i++) {
       mergedString.push(word1[i]);
-      if (i < word2.length) {
+
+      if (i < word2Length) {
         mergedString.push(word2[i]);
       }
     }
-  } else if (word1.length < word2.length) {
-    for (i = 0; i < word2.length; i++) {
-      if (i < word1.length) {
+  } else if (word1Length < word2Length) {
+    for (i = 0; i < word2Length; i++) {
+      if (i < word1Length) {
         mergedString.push(word1[i]);
       }
 
