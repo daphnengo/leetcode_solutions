@@ -61,4 +61,31 @@ var letterCombinations = function(digits) {
   }
 };
 
+// letterMap [ 'a' ]
+// letterMap [ 'a', 'b' ]
+// letterMap [ 'a', 'b', 'c' ]
+// resultArr [ 'a', 'b', 'c' ]
+
+// letterMap [ 'ad' ]
+// letterMap [ 'ad', 'ae' ]
+// letterMap [ 'ad', 'ae', 'af' ]
+// letterMap [ 'ad', 'ae', 'af', 'bd' ]
+// letterMap [ 'ad', 'ae', 'af', 'bd', 'be' ]
+// letterMap [ 'ad', 'ae', 'af', 'bd', 'be', 'bf' ]
+// letterMap [
+//   'ad', 'ae',
+//   'af', 'bd',
+//   'be', 'bf',
+//   'cd'
+// ]
+// letterMap [
+//   'ad', 'ae', 'af',
+//   'bd', 'be', 'bf',
+//   'cd', 'ce'
+// ]
+// letterMap [
+//   'ad', 'ae', 'af',
+//   'bd', 'be', 'bf',
+//   'cd', 'ce', 'cf'
+// ]
 letterCombinations("23");
