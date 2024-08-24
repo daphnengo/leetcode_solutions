@@ -31,17 +31,16 @@
  * @return {string}
  */
 var removeStars = function(s) {
-  const strArray = s.split('');
+  const strArray = [];
 
-  for(let i = 0; i < strArray.length; i++) {
-    if (strArray[i] === "*") {
-      // remove the * and also element before the *
-      strArray.splice(i - 1, 2);
-      i -= 2;
-    }
+  for (const char of s) {
+      if (char === '*') {
+          strArray.pop();
+      } else {
+          strArray.push(char);
+      }
   }
 
-  console.log(strArray.join(''));
   return strArray.join('');
 };
 
