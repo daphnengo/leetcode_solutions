@@ -26,24 +26,49 @@
  * @param {number[]} nums2
  * @return {number[][]}
  */
+// var findDifference = function(nums1, nums2) {
+//   const result1 = [];
+//   const result2 = [];
+
+//   nums1.forEach(num => {
+//     if (!nums2.includes(num) && !result1.includes(num)) {
+//       result1.push(num);
+//     }
+//   });
+
+//   nums2.forEach(num => {
+//     if (!nums1.includes(num) && !result2.includes(num)) {
+//       result2.push(num);
+//     }
+//   });
+
+//   console.log([result1, result2]);
+//   return [result1, result2];
+// };
+
 var findDifference = function(nums1, nums2) {
-  const result1 = [];
-  const result2 = [];
+  const getDistinctElements = (nums1, nums2) => {
+    const existsInNums2 = new Set();
+    const onlyInNums1 = new Set();
 
-  nums1.forEach(num => {
-    if (!nums2.includes(num) && !result1.includes(num)) {
-      result1.push(num);
+    for (const num of nums2) {
+        existsInNums2.add(num);
     }
-  });
 
-  nums2.forEach(num => {
-    if (!nums1.includes(num) && !result2.includes(num)) {
-      result2.push(num);
+    for (const num of nums1) {
+        if (!existsInNums2.has(num)) {
+            onlyInNums1.add(num);
+        }
     }
-  });
 
-  console.log([result1, result2]);
-  return [result1, result2];
+    // convert a set to array
+    return [...onlyInNums1];
+  }
+
+  return [
+    getDistinctElements(nums1, nums2),
+    getDistinctElements(nums2, nums1),
+  ];
 };
 
 findDifference([1,2,3], [2,4,6]);
