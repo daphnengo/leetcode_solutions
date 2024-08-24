@@ -19,11 +19,13 @@
  */
 var moveZeroes = function(nums) {
   let zeroCount = 0;
+
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === 0) {
       nums.splice(i, 1); // splice() overwrites original array
       console.log(nums);
       zeroCount++;
+      i--;
     }
   }
 
@@ -34,4 +36,4 @@ var moveZeroes = function(nums) {
   console.log('output: ', nums);
 };
 
-moveZeroes([0,1,0,3,12]);
+moveZeroes([0,0,1]);
