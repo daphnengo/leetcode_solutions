@@ -47,7 +47,7 @@
 var reverseVowels = function(s) {
   // split s into an array to mutate the vowels
   // string are immutable
-  const sArray = s.toLowerCase().split('');
+  const sArray = s.split('');
   const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   // create left and right pointers
@@ -56,8 +56,8 @@ var reverseVowels = function(s) {
 
 
   while (left < right) {
-    const isLeftVowel = vowels.includes(sArray[left]);
-    const isRightVowel = vowels.includes(sArray[right]);
+    const isLeftVowel = vowels.includes(sArray[left].toLowerCase());
+    const isRightVowel = vowels.includes(sArray[right].toLowerCase());
 
     // if both are vowels, swap
     if (isLeftVowel && isRightVowel) {
