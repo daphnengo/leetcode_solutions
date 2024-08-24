@@ -50,8 +50,13 @@ var isValid = function(s) {
     }
   }
 
-  console.log(true);
-  return true;
+  if (parenthesesArr.length === 0) {
+    console.log(true);
+    return true;
+  } else {
+    console.log(false);
+    return false;
+  }
 };
 
 const input = "()[{}]{}";
