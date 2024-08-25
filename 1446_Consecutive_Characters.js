@@ -23,19 +23,15 @@
 var maxPower = function(s) {
   let maxCount = 1;
   let currentCount = 1;
-  let char = s[0];
 
   for (let i = 1; i < s.length; i++) {
-    if (char === s[i]) {
+    if (s[i] === s[i - 1]) {
       currentCount++;
-    } else {
-      char = s[i];
       maxCount = Math.max(maxCount, currentCount);
+    } else {
       currentCount = 1;
     }
   }
-
-  maxCount = Math.max(maxCount, currentCount);
 
   console.log(maxCount);
   return maxCount;
