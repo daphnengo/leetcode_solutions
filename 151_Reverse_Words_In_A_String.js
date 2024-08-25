@@ -37,7 +37,7 @@ var reverseWords = function(s) {
     }
   }
 
-  console.log(result.join(' '));
+  return result.join(' ');
 };
 
 const s = " the sky is blue ";
