@@ -33,8 +33,6 @@ var mostCommonWord = function(paragraph, banned) {
 
   const wordsArray = paragraph
     .toLowerCase()
-    // The \w metacharacter matches word characters.
-    // A word character is a character a-z, A-Z, 0-9, including _ (underscore)
     .split(/[^a-z]/);
 
   console.log(wordsArray);
